@@ -1,22 +1,20 @@
 const router = require("express").Router();
-const Workout = require("../models/workouts");
+const path = require("path");
 
 // redirect to homepage
 router.get("/", (req,res) => {
-
+    res.sendFile(path.join(__dirname, "../public/index.html"))
 });
 
 //direct to stats page
 router.get("/stats", (req,res) => {
-
+    res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
 //go to create exercise
 router.get("/exercise", (req,res) => {
-
+    console.log(__dirname);
+    res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
 
-//go to update exercise(same as create but with an id passed to it)
-router.get("/exercise?", (req,res) => {
-    
-});
+module.exports = router;
