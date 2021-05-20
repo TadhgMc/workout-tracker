@@ -5,10 +5,12 @@ const Schema = mongoose.Schema;
 const workoutSchema = new Schema({
     name: {
         type: String,
-        trim: true
+        trim: true,
+        required: "Enter an exercise name",
     },
     type: { //cardio vs resistence ?
         type: String,
+        required: "Enter an exercise type"
     },
     weight:{
         type: Number,
@@ -20,7 +22,8 @@ const workoutSchema = new Schema({
         type: Number,
     },
     duration:{
-        type: Date,
+        type: Number,
+        required: "Enter an exercise duration in minutes",
     },
     distance:{
         type: Number,
