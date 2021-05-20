@@ -33,12 +33,11 @@ router.post("/api/workouts", ({body}, res) => {
 
 //update workout<>
 router.put("/api/workouts/:id", (req, res) => {
-    Workout.findOneAndUpdate({
-        _id: mongojs.ObjectId(`${req.params.id}`)
-    },
-    {
-        //document updates w/ ~req.body
-    })
+    const exercise = req.body;
+    Workout.findOneAndUpdate(
+        req.params.id,
+        {$push: {exercise}}
+    )
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
