@@ -2,9 +2,9 @@ const router = require("express").Router();
 const path = require("path");
 
 // redirect to homepage
-router.get("/", (req,res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"))
-});
+// router.get("/", (req,res) => {
+//     res.sendFile(path.join(__dirname, "../public/index.html"))
+// });
 
 //direct to stats page
 router.get("/stats", (req,res) => {
@@ -13,7 +13,7 @@ router.get("/stats", (req,res) => {
 
 //go to create exercise
 router.get("/exercise", (req,res) => {
-    console.log(__dirname);
+    console.log("/exercise in homeroutes.js");
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
 
